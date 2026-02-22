@@ -9,7 +9,7 @@ modLoader = "javafml" #mandatory
 loaderVersion = "${loader_version_range}" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license = "${mod_license}"
+license = "MIT"
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -27,9 +27,13 @@ displayURL = "https://space.bilibili.com/1436953157" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="mana_fluid.png" #optional
 # A text field displayed in the mod UI
-#credits="Thanks for this example mod goes to Java" #optional
+credits = '''
+English: Original mod by Halex https://github.com/Halex000
+中文：原作者 Halex https://github.com/Halex000
+Fork maintainer: Thechosonone683 https://github.com/Thechosonone683
+'''
 # A text field displayed in the mod UI
-authors = "${mod_authors}" #optional
+authors = "Halex (Original), Thechosonone683 (Fork)" #optional
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
@@ -39,7 +43,17 @@ authors = "${mod_authors}" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
 # The description text for the mod (multi line!) (#mandatory)
-description = '''${mod_description}'''
+description = '''
+English:
+Botania Mana Fluid is an addon for the Botania mod which implements a mana fluid into Minecraft. It also modifies Botania's mana pools to interact with buckets and pipes from other Forge mods, allowing you to move mana around using fluid systems.
+
+中文：
+Botania Mana Fluid 是植物魔法（Botania）的一个附属模组，它在 Minecraft 中实现了魔力流体。该模组还修改了植物魔法的魔力池，使其能够与其他 Forge 模组的桶和管道系统交互，从而让你可以使用流体系统来运输魔力。
+
+License: MIT
+Original author: Halex https://github.com/Halex000
+Fork maintainer: Thechosonone683 https://github.com/Thechosonone683
+'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies."${mod_id}"]] #optional
 # the modid of the dependency
@@ -53,11 +67,21 @@ versionRange = "${forge_version_range}" #mandatory
 # AFTER - This mod is loaded AFTER the dependency
 ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT, or SERVER
-side = "BOTH"# Here's another dependency
+side = "BOTH"
+
+# Here's another dependency
 [[dependencies."${mod_id}"]]
 modId = "minecraft"
 mandatory = true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
+side = "BOTH"
+
+# Botania dependency
+[[dependencies."${mod_id}"]]
+modId = "botania"
+mandatory = true
+versionRange = "[1.20.1-447-FORGE,)"
+ordering = "AFTER"
 side = "BOTH"
