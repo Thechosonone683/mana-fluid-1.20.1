@@ -1,0 +1,5 @@
+{
+  "fluid_type.mana_fluid.mana_fluid": "Mana",
+  "block.mana_fluid.mana_block": "Mana",
+  "item.mana_fluid.mana_bucket": "Bucket of Mana"
+}

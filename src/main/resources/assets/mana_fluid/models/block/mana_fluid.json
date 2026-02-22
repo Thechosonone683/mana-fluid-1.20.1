@@ -1,0 +1,7 @@
+{
+  "parent": "block/liquid",
+  "textures": {
+    "still": "mana_fluid:block/mana_still",
+    "flow": "mana_fluid:block/mana_flow"
+  }
+}

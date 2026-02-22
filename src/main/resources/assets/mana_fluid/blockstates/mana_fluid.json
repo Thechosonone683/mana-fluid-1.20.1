@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mana_fluid:block/mana_fluid"
+    }
+  }
+}
