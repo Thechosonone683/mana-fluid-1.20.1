@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 @Mod.EventBusSubscriber(modid = Mana_fluid.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -36,7 +37,7 @@ public class Config {
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event) {
-        ModConfig config = (ModConfig) event.getConfig();
+        ModConfig config = event.getConfig();
 
         if (config.getModId().equals(Mana_fluid.MODID)) {
             // 保存配置文件路径
@@ -69,16 +70,11 @@ public class Config {
         }
 
         try {
-            File configFile = configPath.toFile();
+            // 使用 NIO 的 Files.createDirectories() 自动处理目录创建
+            Files.createDirectories(configPath.getParent());
 
-            // 确保目录存在
-            File parentDir = configFile.getParentFile();
-            if (parentDir != null && !parentDir.exists()) {
-                parentDir.mkdirs();
-            }
-
-            // 直接写入文件，不需要备份
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(configFile))) {
+            // 写入文件
+            try (BufferedWriter writer = Files.newBufferedWriter(configPath)) {
                 writer.write("#Mana Fluid Configuration\n");
                 writer.write("\n");
                 writer.write("# How much Mana equals 1 mB of Mana Fluid\n");
@@ -92,7 +88,7 @@ public class Config {
                 writer.write("bucketManaAmount = " + bucketManaAmount + "\n");
             }
 
-            LOGGER.info("[Mana Fluid] Config saved to: {}", configFile.getAbsolutePath());
+            LOGGER.info("[Mana Fluid] Config saved to: {}", configPath);
         } catch (IOException e) {
             LOGGER.error("[Mana Fluid] Failed to save config: {}", e.getMessage());
         }
