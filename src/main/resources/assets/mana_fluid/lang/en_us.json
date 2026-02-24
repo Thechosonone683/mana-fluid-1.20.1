@@ -1,5 +1,17 @@
 {
-  "fluid_type.mana_fluid.mana_fluid": "Mana",
-  "block.mana_fluid.mana_block": "Mana",
-  "item.mana_fluid.mana_bucket": "Bucket of Mana"
+  "config.mana_fluid.title": "Mana Fluid Configuration",
+  "config.mana_fluid.category.general": "General Settings",
+
+  "config.mana_fluid.mana_per_mb": "Mana per mB",
+  "config.mana_fluid.mana_per_mb.tooltip": "How much Mana equals 1 mB of Mana Fluid",
+
+  "config.mana_fluid.bucket_amount": "Bucket Mana Amount",
+  "config.mana_fluid.bucket_amount.tooltip": "How much Mana a full bucket contains",
+
+  "config.mana_fluid.note": "Note: Bucket amount should ideally be manaPerMB × 1000",
+
+  "config.mana_fluid.require_cloth_config": "Please install Cloth Config API to configure Mana Fluid",
+  "config.mana_fluid.saved": "Mana Fluid configuration saved",
+
+  "fluid_type.mana_fluid.mana_fluid": "Mana Fluid"
 }

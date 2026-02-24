@@ -1,5 +1,17 @@
 {
-  "fluid_type.mana_fluid.mana_fluid": "魔力",
-  "block.mana_fluid.mana_block": "魔力",
-  "item.mana_fluid.mana_bucket": "桶装魔力"
+  "config.mana_fluid.title": "魔力流体配置",
+  "config.mana_fluid.category.general": "常规设置",
+
+  "config.mana_fluid.mana_per_mb": "每 mB 魔力值",
+  "config.mana_fluid.mana_per_mb.tooltip": "1 mB 魔力流体等于多少魔力",
+
+  "config.mana_fluid.bucket_amount": "桶容量",
+  "config.mana_fluid.bucket_amount.tooltip": "一整桶魔力流体包含多少魔力",
+
+  "config.mana_fluid.note": "注意：桶容量最好是 manaPerMB 的 1000 倍",
+
+  "config.mana_fluid.require_cloth_config": "请安装 Cloth Config API 来配置魔力流体",
+  "config.mana_fluid.saved": "魔力流体配置已保存",
+
+  "fluid_type.mana_fluid.mana_fluid": "魔力流体"
 }

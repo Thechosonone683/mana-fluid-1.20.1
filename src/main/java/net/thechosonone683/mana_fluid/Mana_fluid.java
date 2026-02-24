@@ -15,6 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thechosonone683.mana_fluid.handler.FogHandler;
 import net.thechosonone683.mana_fluid.index.FluidInteractionsRegistry;
 import net.thechosonone683.mana_fluid.index.FluidRegistry;
+import net.thechosonone683.mana_fluid.integration.ModConfigScreen;
 import org.slf4j.Logger;
 
 @Mod(Mana_fluid.MODID)
@@ -40,14 +41,12 @@ public class Mana_fluid {
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             FluidInteractionsRegistry.register();
-            // 打印配置信息
             LOGGER.info("[Mana Fluid] Config loaded: manaPerMB={}, bucketManaAmount={}",
                     Config.manaPerMB, Config.bucketManaAmount);
         });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        // 将魔力桶添加到工具标签页
         if(event.getTabKey() == net.minecraft.world.item.CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(FluidRegistry.MANA_BUCKET);
         }
@@ -60,5 +59,8 @@ public class Mana_fluid {
 
         // 注册雾效处理器
         MinecraftForge.EVENT_BUS.register(FogHandler.class);
+
+        // 注册配置屏幕
+        ModConfigScreen.registerConfigScreen();
     }
 }
