@@ -211,3 +211,29 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 
 }
+
+// 在 build.gradle 末尾添加
+java {
+    withSourcesJar()
+}
+
+tasks.withType(Jar).configureEach {
+    // 当遇到重复文件时，跳过重复的
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+    // 如果不需要 javadoc，可以注释掉
+    enabled = false
+}
+
+// 可选：如果需要开发版本
+task devJar(type: Jar) {
+    archiveClassifier.set('dev')
+    from sourceSets.main.output
+}
+
+// 添加 devJar 到构建任务
+build.dependsOn devJar
