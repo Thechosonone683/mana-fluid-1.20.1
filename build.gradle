@@ -230,7 +230,7 @@ javadoc {
 }
 
 // 可选：如果需要开发版本
-task devJar(type: Jar) {
+tasks.register('devJar', Jar) {
     archiveClassifier.set('dev')
     from sourceSets.main.output
 }
