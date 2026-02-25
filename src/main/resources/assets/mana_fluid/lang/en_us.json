@@ -13,5 +13,6 @@
   "config.mana_fluid.require_cloth_config": "Please install Cloth Config API to configure Mana Fluid",
   "config.mana_fluid.saved": "Mana Fluid configuration saved",
 
-  "fluid_type.mana_fluid.mana_fluid": "Mana Fluid"
+  "fluid_type.mana_fluid.mana_fluid": "Mana Fluid",
+  "item.mana_fluid.mana_bucket": "Bucket of Mana"
 }

@@ -13,5 +13,6 @@
   "config.mana_fluid.require_cloth_config": "請安裝 Cloth Config API 來配置魔力流體",
   "config.mana_fluid.saved": "魔力流體配置已保存",
 
-  "fluid_type.mana_fluid.mana_fluid": "魔力流體"
+  "fluid_type.mana_fluid.mana_fluid": "魔力流體",
+  "item.mana_fluid.mana_bucket": "桶裝魔力"
 }
