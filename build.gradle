@@ -142,6 +142,10 @@ repositories {
         name = "shedaniel"
         url = "https://maven.shedaniel.me/"
     }
+    maven{
+        name = "CreateMaven"
+        url = "https://maven.createmod.net/"
+    }
     maven { url = 'https://www.cursemaven.com'  }
 }
 
@@ -161,6 +165,10 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.136")
+    implementation fg.deobf("dev.engine-room.flywheel:flywheel-forge-1.20.1:1.0.6-278")
+    implementation fg.deobf("net.createmod.catnip:Catnip-Forge-1.20.1:0.8.44") {
+        transitive = false
+    } // 暂时关闭传递依赖检查，我们先保证自己加的正确}
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${minecraft_version}-${coolmod_version}.jar
