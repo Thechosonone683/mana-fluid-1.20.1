@@ -1,4 +1,6 @@
 {
+  "block.mana_fluid.mana_block": "魔力流體",
+
   "config.mana_fluid.title": "魔力流體配置",
   "config.mana_fluid.category.general": "常規設置",
 
